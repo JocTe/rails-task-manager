@@ -1,0 +1,11 @@
+<h1><%= @task.title %></h1>
+
+<p><%= @task.details %></p>
+
+<p>
+    <%= check_box_tag(:task) %>
+    <%= label_tag(:task, "This task is") %>
+</p>
+
+<p><%= link_to "back to list", tasks_path %></p>
+<%= link_to "Edit Task", tasks_edit_path %>
