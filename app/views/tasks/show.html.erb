@@ -1,11 +1,14 @@
-<h1><%= @task.title %></h1>
-
-<p><%= @task.details %></p>
-
-<p>
-    <%= check_box_tag(:task) %>
-    <%= label_tag(:task, "This task is") %>
-</p>
-
-<p><%= link_to "back to list", tasks_path %></p>
-<%= link_to "Edit Task", tasks_edit_path %>
+<div class="container">
+    <h1><%= @task.title %></h1>
+    
+    <p><%= @task.details %></p>
+    
+    <p>
+        <%= check_box_tag(:task) %>
+        <%= label_tag(:task, "This task is") %>
+    </p>
+      <div class="border-top mt-3"></div>
+    <%= link_to '<i class="bi bi-arrow-counterclockwise" style="color: cornflowerblue;"></i> Back to list'.html_safe, tasks_path %>
+    
+    <%= link_to "Edit Task", edit_task_path %>
+</div>

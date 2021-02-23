@@ -1,7 +1,8 @@
-<%= form_for(@task) do |t| %>
-  <%= t.label :title %>
-  <%= t.text_field :title %>
-  <%= t.label :details %>
-  <%= t.text_field :details %>
-  <%= t.submit %>
-<% end %>
+<div class="container">
+<h1>New Task</h1>
+<%= render "form", task: @task %>
+
+   <div class="border-top mt-3"></div>
+<%= link_to '<i class="bi bi-arrow-counterclockwise" style="color: cornflowerblue;"></i> Back to list'.html_safe, tasks_path %>
+
+</div>

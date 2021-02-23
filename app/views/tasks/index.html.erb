@@ -1,14 +1,19 @@
-<h1>My Task</h1>
-<ul class=tasks>
-  <% @tasks.each do |task| %>
-  <li class="task">
-    <input type="checkbox" id="task-#{task.id}" name="task-#{task.id}" value="#{task.title}">
-    <label for="task-#{task.id}"> <%= link_to task.title, task_path(task) %></label>
-    <%= link_to "Delete",task_path(task),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-  </li>
-  <% end %>
+<div class="container">
+  <h1>My Task</h1>
+  <ul class=tasks>
+    <% @tasks.each do |task| %>
+    <li class="task">
+      <input type="checkbox" id="task-#{task.id}" name="task-#{task.id}" <%= task.completed ? "checked" : nil %>>
+      <label for="task-#{task.id}"> <%= link_to task.title, task_path(task) %></label>
+      <%= link_to '<i class="bi bi-trash" style="color: cornflowerblue;"></i>'.html_safe, task_path(task),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+    </li>
+    <% end %>
+    <div class="border-top"></div>
 
-  <%= link_to "Add a new Task", tasks_new_path %>
-</ul>
+    <%= link_to '<i class="bi bi-plus-square-fill" style="color: cornflowerblue;"></i> Add a new Task'.html_safe, new_task_path %>
+  </ul>
+</div>
+
+
